@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<view class="container">
+  <map 
+      id="map"
+      style="width: 100%; height: 100%;"
+      latitude="{{location.latitude}}"
+      longitude="{{location.longitude}}"
+      scale="{{scale}}"
+      setting="{{setting}}"
+      enable-overlooking="{{isOverLooking}}"
+      show-location="{{true}}"
+      markers="{{markers}}"
+      enable-3D="{{is3D}}"
+      >
+      <view class="icon-container"> 
+    <view class="avatar-Container">
+     <cover-image wx:if="{{!canIUseOpenData}}" src="/resources/account.png" bindtap="onMyTripsTap"></cover-image>
+     <cover-view wx:if="{{canIUseOpenData}}" class="userinfo-avatar" bindtap="onMyTripsTap">
+     <open-data  type="userAvatarUrl" ></open-data>
+     </cover-view>
+     </view>
+      <cover-image
+      src="/resources/my_location.png"
+      bindtap="onMyLocationTap"
+      ></cover-image>
+      </view>
+      <cover-view class="btn-container bg-grey round" bindtap="onScanClicked">
+      <cover-view>
+      扫码租车
+    </cover-view>
+      </cover-view>
+      </map>
+
+</view>

@@ -1,0 +1,11 @@
+<!--pages/learncss/learncss.wxml-->
+<view class="Container">
+<text user-select wx:if="{{showPath}}">pages/learncss/learncss.wxml</text>
+<view wx:for="{{values}}" wx:for-item="val" wx:key="id">
+    <view class="item cu-avatar xl radius {{val.id % 2 ? 'blue':'red'}}">
+        values is {{val.name}}
+        <view class="cu-tag badge">99+</view>
+        </view>
+
+</view>
+</view>
