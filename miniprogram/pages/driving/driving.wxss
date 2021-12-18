@@ -1,0 +1,49 @@
+/* pages/driving/driving.wxss */
+.driving-main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    
+}
+#map{
+    width: 100%;
+    flex-grow: 1;
+}
+.trip{
+    height: 310rpx;
+    /* padding-top: 20rpx; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* align-items: flex-start; */
+}
+.time-Container{
+    text-align: center;
+    font-size: 70rpx;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+.cost-main{
+    height: 70rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cost-title{
+    margin-right: 10px;
+}
+.cost-text{
+color: red;
+}
+.cu-btn.bg-red.lg{
+    width: 70%;
+}
+.time.cuIcon-timefill{
+    color: orange;
+    margin-right: 10px;
+    font-size: 60rpx;
+}

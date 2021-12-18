@@ -1,0 +1,23 @@
+<!--pages/driving/driving.wxml-->
+<view class="driving-main">
+      <map 
+      id="map"
+      latitude="{{location.latitude}}"
+      longitude="{{location.longitude}}"
+      scale="{{scale}}"
+      show-location="{{true}}"
+      >
+      </map>
+      <view class="trip">
+          <view class="time-Container">
+          <text class="time cuIcon-timefill"></text>
+          <text >{{elapsed}}</text>
+          </view>
+            <view class="cost-main">
+          <text class="cost-title">费用:</text>
+          <text class="cost-text">{{fee}}元</text>
+          </view>
+  <button class="cu-btn bg-red lg" bindtap="onSubmit">结束行程</button>
+
+      </view>
+</view>

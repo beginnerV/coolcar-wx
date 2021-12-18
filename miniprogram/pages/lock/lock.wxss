@@ -1,0 +1,41 @@
+/* pages/lock/lock.wxss */
+.lock-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.lock-main image{
+    width: 600rpx;
+    height: 360rpx;
+}
+.static{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40rpx;
+    padding-bottom: 240rpx;
+}
+.avatar-Container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
+    /* height: 180rpx; */
+}
+.userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+
+.lock-button.cu-btn.bg-grey{
+    bottom: 7%;
+    width: 80%;
+    position: absolute;
+}

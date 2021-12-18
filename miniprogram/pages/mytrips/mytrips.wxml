@@ -1,0 +1,60 @@
+<!-- pages/mytrips/mytrips.wxml -->
+<view id="heading" class="padding-bottom-xs">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoPlay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" display-multiple-items="{{multiItemCount}}" previous-margin="{{prevMargin}}" next-margin="{{nextMargin}}" vertical="{{vertical}}" current="{{current}}" bindchange="onSwiperChange">
+        <swiper-item wx:for="{{promotionItems}}" wx:key="promotionID" bindtap="onSwiperTap" data-promotion-id="{{item.promotionID}}">
+            <image class="swiper-image" src="{{item.img}}" />
+        </swiper-item>
+    </swiper>
+    <view class="auth-Container margin-left margin-right">
+        <view>我的行程</view>
+        <view>
+            <button class="cu-avatar round lg bg-grey margin-xs" bindtap="getUserProfile" wx:if="{{!canIUseOpenData}}">
+                <text class="cuIcon-people"></text>
+            </button>
+            <view wx:if="{{canIUseOpenData}}" class="userinfo-avatar">
+                <open-data type="userAvatarUrl"></open-data>
+            </view>
+            <view bindtap="onRegisterTap" class="text-blue">驾驶资格未认证</view>
+        </view>
+    </view>
+</view>
+<view class="nav-container">
+    <swiper duration="500" display-multiple-items="{{navCount}}" vertical style="height:{{tripsHeight}}px" class="bg-white nav" current-item-id="{{navScroll}}">
+        <swiper-item wx:for="{{navItems}}" wx:key="id" item-id="{{item.id}}" data-main-id="{{item.mainId}}" id="{{item.id}}" class="cu-item {{navSel === item.id?'text-green':''}}" bindtap="onNavItemTap">
+            <view>{{item.label}}</view>
+            <view wx:if="{{navSel === item.id}}" class="cur"></view>
+        </swiper-item>
+    </swiper>
+    <scroll-view scroll-y scroll-with-animation enable-back-to-top scroll-into-view="{{mainScroll}}" bindscroll="onMainScroll" style="height:{{tripsHeight}}px">
+        <view wx:for="{{mainItems}}" wx:key="id" class="trip main-item cu-bar solid-bottom bg-white tripItem padding  margin-bottom margin-left margin-right" id="{{item.id}}" data-nav-id="{{item.navId}}" data-nav-scroll-id="{{item.navScrollId}}">
+            <view class="action-row-between" style="margin:0px">
+                <view>
+                    <text class="cuIcon-title text-green"></text>
+                    <text>{{item.data.id}}</text>
+                </view>
+                <view>{{item.data.status}}</view>
+            </view>
+            <view class="describe">
+                <view>
+                    <view class="describe-right-item">
+                        <text>起</text>
+                        <text>{{item.data.start}}</text>
+                    </view>
+                    <view class="describe-right-item">
+                        <text>终</text>
+                        <text>{{item.data.end}}</text>
+                    </view>
+                    <view class="describe-right-item">
+                        <text>距</text>
+                        <text>{{item.data.distance}}</text>
+                    </view>
+                    <view class="describe-right-item">
+                        <text>时</text>
+                        <text>{{item.data.duration}}</text>
+                    </view>
+                </view>
+                <view class="fee">{{item.data.fee}}</view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
